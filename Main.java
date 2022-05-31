@@ -59,6 +59,10 @@ class Main {
         throw new WrongAge();
         System.out.println("Podaj datę urodzenia DD-MM-YYY");
         var date = scan.nextLine();
+      if(date.charAt(2) == '-' && date.charAt(5) == '-'){
+        throw new WrongDateOfBirth();
+      }
+      else
         (new Service1()).addStudent(new Student(name, age, date));
     }
 
